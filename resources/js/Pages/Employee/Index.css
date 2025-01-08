@@ -1,0 +1,122 @@
+/* Index.css */
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .search-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .search-input {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 10px;
+    flex: 1;
+    min-width: 200px;
+    background-color: #dcdcdc;
+  }
+  
+  .search-button, .refresh-button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .search-button {
+    background-color: #10ab22;
+    color: #ffffff;
+  }
+  
+  .refresh-button {
+    background-color: #10ab22;
+    color: #ffffff;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ffffff;
+  }
+  
+  .employee-table th {
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: #43b350;
+    color: #ffffff;
+  }
+  
+  .employee-table td {
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+  }
+  
+  .even-row {
+    background-color: #dcdcdc;
+  }
+  
+  .odd-row {
+    background-color: #fff;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .pagination-button {
+    padding: 8px;
+    border-radius: 4px;
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #10ab22;
+    color: #ffffff;
+    border: 1px solid #43b350;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .pagination-button.active {
+    background-color: #dcdcdc;
+    color: #43b350;
+  }
+  
+  .pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .no-employees {
+    text-align: center;
+    color: red;
+  }
+  
