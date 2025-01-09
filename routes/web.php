@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeController;//เพิ่มเส้นทางเพื่อใช้ employee
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/employee', [EmployeeController::class, 'index']);//เพิ่มเส้นทางในการทำงาน
+//เรียกใช้เมธอด index เพื่อดึงข้อมูลพนักงานจาก EmployeeController
+Route::get('/employee', [EmployeeController::class, 'index']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

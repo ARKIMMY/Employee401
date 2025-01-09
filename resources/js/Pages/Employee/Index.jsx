@@ -116,22 +116,31 @@ export default function EmployeeIndex({ employees, query, currentPage }) {
             </tbody>
           </table>
 
-          {/* การแบ่งหน้า */}
           <div className="pagination">
-            {employees.links.map((link, index) => (
-              <button
-                key={index}
-                onClick={() => link.url && handlePagination(link.url)} // เปลี่ยนหน้า
-                disabled={!link.url} // ปิดปุ่มถ้าไม่มี URL
-                className={`pagination-button ${link.active ? 'active' : ''}`}
-              >
-                {/* แปลง HTML Entities */}
-                {decodeHtmlEntities(link.label || '')
-                  .replace('Previous', ' Previous')
-                  .replace('Next', 'Next')}
-              </button>
-            ))}
-          </div>
+  {employees.links.map((link, index) => (
+    link.label.includes('Previous') || link.label.includes('Next') ? (
+      <button
+        key={index}
+        onClick={() => link.url && handlePagination(link.url)} // คลิกได้ถ้ามี URL
+        disabled={!link.url} // ปิดปุ่มถ้าไม่มี URL
+        className={`pagination-button ${link.active ? 'active' : ''}`}
+      >
+        {decodeHtmlEntities(link.label || '')
+          .replace('Previous', ' Previous')
+          .replace('Next', 'Next')}
+      </button>
+    ) : (
+      <span
+        key={index}
+        className={`pagination-link ${link.active ? 'active' : ''}`}
+      >
+        {decodeHtmlEntities(link.label || '')}
+      </span>
+    )
+  ))}
+</div>
+
+
         </div>
       ) : (
         <h2 className="no-employees">No employees found.</h2>
